@@ -100,12 +100,18 @@ function Dashboard() {
 
   return (
     <div className="container mt-5">
-      <div className="d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between">
+        <div>
         <h2>Dashboard</h2>
-        <button className="btn btn-danger" onClick={handleLogout}>
+        </div>
+        <div>
+        <a href className="btn btn-link" onClick={handleLogout}>
           Logout
-        </button>
+        </a>
+        </div>
+        
       </div>
+  
 
       {/* Form for creating or editing a post */}
       <form onSubmit={editingPost ? handleEditPost : handlePostSubmit}>

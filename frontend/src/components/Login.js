@@ -44,7 +44,12 @@ function Login() {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">Login</button>
+
+        <div className='d-flex justify-content-between'>
+        <button type="submit" className="btn btn-primary me-2">Login</button>
+        <a href='/register' type="button" className="btn btn-secondary">Register</a>
+        </div>
+        
       </form>
     </div>
   );

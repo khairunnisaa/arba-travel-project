@@ -4,11 +4,12 @@ import API from '../api/axiosConfig';
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post('/register/', { username, password });
+      await API.post('/register/', { username, password, email});
       alert('Registration successful');
       window.location.href = '/';
     } catch (error) {
@@ -40,6 +41,17 @@ function Register() {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">E-mail</label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>

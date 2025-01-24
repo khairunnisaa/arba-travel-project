@@ -61,14 +61,12 @@ function Comment({ postId }) {
   
       console.log('Updated Comment:', updatedComment);
   
-      // Update the comment in the state using its ID
       setComments((prevComments) =>
         prevComments.map((comment) =>
           comment.id === updatedComment.id ? updatedComment : comment
         )
       );
   
-      // Reset editing states
       setEditingComment(null);
       setEditText("");
       fetchComments();
