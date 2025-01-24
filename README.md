@@ -30,16 +30,7 @@ git clone https://github.com/khairunnisaa/arba-travel-project.git
 cd arba-travel-project
 ```
 
-### Step 2: Setup Environment Variables
-Create a `.env` file in the project root and add the following variables:
-```env
-SECRET_KEY=your_secret_key
-DEBUG=True
-ALLOWED_HOSTS=*
-DATABASE_URL=sqlite:///db.sqlite3
-```
-
-### Step 3: Build and Run the Docker Containers
+### Step 2: Build and Run the Docker Containers
 Use Docker Compose to build and run the project:
 ```bash
 docker-compose up --build
@@ -49,18 +40,18 @@ This will:
 - Start the Django backend server on `http://127.0.0.1:8000/`
 - Start the React frontend server on `http://localhost:3000/`
 
-### Step 4: Access the Application
+### Step 3: Access the Application
 1. Navigate to the frontend: [http://localhost:3000](http://localhost:3000)
 2. Test the API using tools like Postman at: [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
 
-### Step 5: Run Migrations
+### Step 4: Run Migrations
 Inside the backend container, run the migrations to set up the database:
 ```bash
 docker exec -it <backend_container_id> bash
 python manage.py migrate
 ```
 
-### Step 6: Collect Static Files
+### Step 5: Collect Static Files
 Run the following to collect static files:
 ```bash
 docker exec -it <backend_container_id> bash
