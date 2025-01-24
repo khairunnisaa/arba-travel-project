@@ -1,9 +1,22 @@
 version: '3.9'
+
 services:
-  web:
-    build: .
+  backend:
+    build:
+      context: .  # Context is the root directory to include manage.py
+      dockerfile: api/Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - .:/app  # Mount the root directory to include manage.py
+    working_dir: /app  # Ensure the container starts in the correct directory
     command: python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/app
