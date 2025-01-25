@@ -43,6 +43,7 @@ This will:
 ### Step 3: Access the Application
 1. Navigate to the frontend: [http://localhost:3000](http://localhost:3000)
 2. Test the API using tools like Postman at: [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
+3. Access from deployed Application with AWS EC2 : http://3.107.1.201:3000/
 
 ### Step 4: Run Migrations
 Inside the backend container, run the migrations to set up the database:
